@@ -75,7 +75,7 @@ fi
 function do_rsync() {
     local RSYNC_MODULE=$1
     local MIRROR_ROOT=$2
-    if [ -n "$RSYNC_MODULE" && -n "$MIRROR_ROOT" ]; then
+    if [ -n "$RSYNC_MODULE" ] && [ -n "$MIRROR_ROOT" ]; then
 
         $LOGGER "begin ${RSYNC_MODULE} sync"
         # the order of the excludes is significant
