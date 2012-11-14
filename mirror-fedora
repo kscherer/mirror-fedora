@@ -11,27 +11,29 @@
 ################################################################################
 
 #-- Configuration --------------------------------------------------------------
-RSYNC_HOST=dl.fedoraproject.org
-RSYNC_MODULE=fedora-enchilada
 # uncomment the following if using authenticated rsync
 #RSYNC_USER=user
 # place password in this file if using authenticated rsync
-RSYNC_PASS=/etc/mirror-fedora/password
-RSYNC_EXCLUDES=/etc/mirror-fedora/excludes
+RSYNC_PASS=$(dirname $0)/password
+RSYNC_EXCLUDES=$(dirname $0)/excludes
 RSYNC_PARTIAL_DIR=.rsync-partial-dir
 # Uncomment for a more interesting manual run (not cron)
 #RSYNC_BONUS_ARGS="-h --stats --progress --bwlimit=1290"
-MIRROR_ROOT=/var/www/html/pub/mirrors/fedora
-LOCK_FILE=/var/run/mirror-fedora/running
-LAST_RUN=/usr/share/mirror-fedora/last-run
-# this idea is apparently abandoned
-#RSYNC_FILTER_URL='https://admin.fedoraproject.org/mirrormanager/rsyncFilter?categories=Fedora%20Linux&stripprefix=pub/fedora'
+
+LOCK_FILE=$(dirname $0)/running
+LAST_RUN=$(dirname $0)/last-run
+
 # this file can be used to override the settings found above
-CONFIG=/etc/mirror-fedora/mirror-fedora.conf
+CONFIG=$(dirname $0)/mirror-fedora.conf
 #-------------------------------------------------------------------------------
 
-# override above options as needed
-. $CONFIG
+#Use the config file specific to host
+if [ -f "${CONFIG}.${HOSTNAME}" ]; then
+    . "${CONFIG}.${HOSTNAME}"
+else
+    # override above options as needed
+    . $CONFIG
+fi
 
 LOGTAG=`basename $0`
 LOGGER="logger -t $LOGTAG"
@@ -63,15 +65,6 @@ else
 fi
 $LOGGER "last run was " `date --utc --date @$last_run_epoch_utc`
 
-# download an exclude file which serves to *include* dirs that have changed
-# since X and to exclude all else. be sure to place this exclude last
-if [ -n "$RSYNC_FILTER_URL" ]; then
-	$LOGGER "finding upstream directories changed since last run"
-	unchanged_content_exclude=`mktemp rsync.XXXXXXXX`
-	curl "${RSYNC_FILTER_URL}\&since=${last_run_epoch_utc}" \
-	    > "$unchanged_content_exclude"
-fi
-
 user_arg=''
 password_arg=''
 if [ -n "$RSYNC_USER" ]; then
@@ -79,24 +72,35 @@ if [ -n "$RSYNC_USER" ]; then
 	password_arg="--password-file=${RSYNC_PASS}"
 fi
 
-$LOGGER "begin sync"
-# the order of the excludes is significant
-rsync ${RSYNC_BONUS_ARGS} \
-    --verbose \
-    --archive \
-    --hard-links \
-    --numeric-ids \
-    --partial-dir=${RSYNC_PARTIAL_DIR} \
-    --delete \
-    --delete-delay \
-    --delay-updates \
-    --exclude=${RSYNC_PARTIAL_DIR} \
-    --exclude-from=${RSYNC_EXCLUDES} \
-    --exclude-from=${unchanged_content_exclude} \
-    rsync://${user_arg}${RSYNC_HOST}/${RSYNC_MODULE}/ \
-    $password_arg \
-    $MIRROR_ROOT
-$LOGGER "end sync"
+function do_rsync() {
+    local RSYNC_MODULE=$1
+    local MIRROR_ROOT=$2
+    if [ -n "$RSYNC_MODULE" && -n "$MIRROR_ROOT" ]; then
+
+        $LOGGER "begin ${RSYNC_MODULE} sync"
+        # the order of the excludes is significant
+        rsync ${RSYNC_BONUS_ARGS} \
+            --verbose \
+            --archive \
+            --hard-links \
+            --numeric-ids \
+            --partial-dir=${RSYNC_PARTIAL_DIR} \
+            --delete \
+            --delete-delay \
+            --delay-updates \
+            --exclude=${RSYNC_PARTIAL_DIR} \
+            --exclude-from=${RSYNC_EXCLUDES} \
+            rsync://${user_arg}${RSYNC_HOST}/${RSYNC_MODULE}/ \
+            $password_arg \
+            $MIRROR_ROOT
+
+        $LOGGER "end ${RSYNC_MODULE} sync"
+    fi
+}
+
+do_rsync ${RSYNC_FEDORA_MODULE} ${FEDORA_MIRROR_ROOT}
+do_rsync ${RSYNC_EPEL_MODULE} ${EPEL_MIRROR_ROOT}
+do_rsync ${RSYNC_CENTOS_MODULE} ${CENTOS_MIRROR_ROOT}
 
 # acceptable rsync exit codes:
 #       0      Success
@@ -112,6 +116,5 @@ if [ $? -eq 0 -o $? -eq 23 -o $? -eq 24 ]; then
 	fi
 fi
 
-rm -f "$unchanged_content_exclude"
 rm -f "$LOCK_FILE"
 $LOGGER "stop"

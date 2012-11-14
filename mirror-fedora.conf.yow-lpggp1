@@ -1,0 +1,20 @@
+FEDORA_MIRROR_ROOT=/yow-lpggp14/mirror/fedora
+EPEL_MIRROR_ROOT=/yow-lpggp14/mirror/epel
+CENTOS_MIRROR_ROOT=/yow-lpggp14/mirror/centos
+
+RSYNC_HOST=mirror.nexicom.net
+RSYNC_FEDORA_MODULE=Fedora
+RSYNC_EPEL_MODULE=Fedora-EPEL
+RSYNC_CENTOS_MODULE=CentOS
+
+# uncomment the following only if using authenticated rsync
+#RSYNC_USER=user
+# place password in this file if using authenticated rsync
+#RSYNC_PASS=$(dirname $0)/password
+#RSYNC_EXCLUDES=$(dirname $0)/excludes
+#RSYNC_PARTIAL_DIR=.rsync-partial-dir
+# Uncomment for a more interesting manual run (not cron)
+RSYNC_BONUS_ARGS="-h --stats --progress"
+
+#LOCK_FILE=$(dirname $0)/running
+#LAST_RUN=$(dirname $0)/last-run

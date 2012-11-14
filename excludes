@@ -1,12 +1,53 @@
-# These files or directories will be excluded from the rsync.
-#
-# Maybe you don't want certain arches or source RPMs. See
-# the rsync man page for syntax.
-#----------------------------------------------------------------------
-#
-# skip powerpc
-#ppc/
-#ppc64/
-#
-# skip source RPMs 
-#source/
+**/debug/**
+**/alpha/**
+**/source/**
+**/SRPMS/**
+**/drpms/**
+**/ppc/**
+**/ppc64/**
+**/armhfp/**
+**/s390/**
+**/s390x/**
+**/*.iso
+core/**
+development/**
+extras/**
+releases/7/**
+releases/8/**
+releases/9/**
+releases/10/**
+releases/11/**
+releases/12/**
+releases/13/**
+releases/14/**
+releases/test/**
+updates/8/**
+updates/9/**
+updates/10/**
+updates/11/**
+updates/12/**
+updates/13/**
+updates/14/**
+updates/18/**
+updates/testing/**
+#EPEL excludes
+4*/**
+5Client/**
+5Server/**
+beta/**
+testing/**
+#CentOS excludes
+2*/**
+3*/**
+5/addons/**
+5/centosplus/**
+5/contrib/**
+5/cr/**
+5/extras/**
+5/fasttrack/**
+6/addons/**
+6/centosplus/**
+6/contrib/**
+6/cr/**
+6/extras/**
+6/fasttrack/**
