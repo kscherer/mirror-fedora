@@ -14,7 +14,7 @@ RSYNC_CENTOS_MODULE=CentOS
 #RSYNC_EXCLUDES=$(dirname $0)/excludes
 #RSYNC_PARTIAL_DIR=.rsync-partial-dir
 # Uncomment for a more interesting manual run (not cron)
-RSYNC_BONUS_ARGS="-h --stats --progress"
+#RSYNC_BONUS_ARGS="-h --stats --progress"
 
 #LOCK_FILE=$(dirname $0)/running
 #LAST_RUN=$(dirname $0)/last-run
