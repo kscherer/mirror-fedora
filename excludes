@@ -40,15 +40,3 @@ testing/**
 #CentOS excludes
 2*/**
 3*/**
-5/addons/**
-5/centosplus/**
-5/contrib/**
-5/cr/**
-5/extras/**
-5/fasttrack/**
-6/addons/**
-6/centosplus/**
-6/contrib/**
-6/cr/**
-6/extras/**
-6/fasttrack/**
