@@ -111,7 +111,7 @@ if [ $? -eq 0 -o $? -eq 23 -o $? -eq 24 ]; then
 	touch --date "@$(($start_time - 30))" $LAST_RUN
 	# update mirror status in the MirrorManager database
 	$LOGGER "reporting to mirrormanager"
-	report_mirror
+	$(dirname $0)/report_mirror_proxy.py
 	if [ $? -ne 0 ]; then
 		$LOGGER "ERROR failed to report to mirrormanager"
 	fi
