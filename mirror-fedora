@@ -90,7 +90,7 @@ function do_rsync() {
             --delay-updates \
             --exclude=${RSYNC_PARTIAL_DIR} \
             --exclude-from=${RSYNC_EXCLUDES} \
-            rsync://${user_arg}${RSYNC_HOST}/${RSYNC_MODULE}/ \
+            rsync://${user_arg}${RSYNC_MODULE}/ \
             $password_arg \
             $MIRROR_ROOT
 
@@ -101,6 +101,7 @@ function do_rsync() {
 do_rsync ${RSYNC_FEDORA_MODULE} ${FEDORA_MIRROR_ROOT}
 do_rsync ${RSYNC_EPEL_MODULE} ${EPEL_MIRROR_ROOT}
 do_rsync ${RSYNC_CENTOS_MODULE} ${CENTOS_MIRROR_ROOT}
+do_rsync ${RSYNC_PUPPETLABS_MODULE} ${PUPPETLABS_MIRROR_ROOT}
 
 # acceptable rsync exit codes:
 #       0      Success

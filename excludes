@@ -40,3 +40,8 @@ testing/**
 #CentOS excludes
 2*/**
 3*/**
+#Puppetlabs excludes
+apt-enterprise/**
+yum-enterprise/**
+incoming/**
+tasks/**

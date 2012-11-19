@@ -1,11 +1,13 @@
 #FEDORA_MIRROR_ROOT=/yow-lpggp14/mirror/fedora
 EPEL_MIRROR_ROOT=/ala-lpggp42/mirror/epel
 CENTOS_MIRROR_ROOT=/ala-lpggp42/mirror/centos
+PUPPETLABS_MIRROR_ROOT=/ala-lpggp42/mirror/puppetlabs
 
 RSYNC_HOST=linux.mirrors.es.net
-#RSYNC_FEDORA_MODULE=Fedora
-RSYNC_EPEL_MODULE=fedora-epel
-RSYNC_CENTOS_MODULE=centos
+#RSYNC_FEDORA_MODULE=${RSYNC_HOST}/fedora
+RSYNC_EPEL_MODULE=${RSYNC_HOST}/fedora-epel
+RSYNC_CENTOS_MODULE=${RSYNC_HOST}/centos
+RSYNC_PUPPETLABS_MODULE=yum.puppetlabs.com/packages
 
 # uncomment the following only if using authenticated rsync
 #RSYNC_USER=user
