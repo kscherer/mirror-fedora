@@ -1,7 +1,7 @@
 FEDORA_MIRROR_ROOT=/yow-lpggp14/mirror/fedora
 EPEL_MIRROR_ROOT=/yow-lpggp14/mirror/epel
 CENTOS_MIRROR_ROOT=/yow-lpggp14/mirror/centos
-PUPPETLABS_MIRROR_ROOT=/yow-lpggp14/mirror/puppetlabs-new
+PUPPETLABS_MIRROR_ROOT=/yow-lpggp14/mirror/puppetlabs
 
 RSYNC_HOST=mirror.nexicom.net
 RSYNC_FEDORA_MODULE=${RSYNC_HOST}/Fedora
