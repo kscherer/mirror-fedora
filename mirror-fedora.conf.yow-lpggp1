@@ -16,7 +16,7 @@ RSYNC_PUPPETLABS_MODULE=yum.puppetlabs.com/packages
 #RSYNC_EXCLUDES=$(dirname $0)/excludes
 #RSYNC_PARTIAL_DIR=.rsync-partial-dir
 # Uncomment for a more interesting manual run (not cron)
-RSYNC_BONUS_ARGS="-h --stats --progress"
+#RSYNC_BONUS_ARGS="-h --stats --progress"
 #RSYNC_BONUS_ARGS="-h --stats --progress --dry-run"
 
 #LOCK_FILE=$(dirname $0)/running

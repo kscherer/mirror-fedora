@@ -84,6 +84,7 @@ function do_rsync() {
             --archive \
             --hard-links \
             --numeric-ids \
+            --force \
             --partial-dir=${RSYNC_PARTIAL_DIR} \
             --delete \
             --delete-delay \
