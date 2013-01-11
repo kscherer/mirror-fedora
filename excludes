@@ -47,3 +47,5 @@
 /yum-enterprise/**
 /incoming/**
 /tasks/**
+#ignore source tarballs in linux mint
+**/*.tar.gz

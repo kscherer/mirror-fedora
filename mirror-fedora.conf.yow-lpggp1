@@ -2,12 +2,14 @@ FEDORA_MIRROR_ROOT=/yow-lpggp14/mirror/fedora
 EPEL_MIRROR_ROOT=/yow-lpggp14/mirror/epel
 CENTOS_MIRROR_ROOT=/yow-lpggp14/mirror/centos
 PUPPETLABS_MIRROR_ROOT=/yow-lpggp14/mirror/puppetlabs
+LINUXMINT_MIRROR_ROOT=/yow-lpggp14/mirror/linuxmint-packages
 
 RSYNC_HOST=mirror.nexicom.net
 RSYNC_FEDORA_MODULE=${RSYNC_HOST}/Fedora
 RSYNC_EPEL_MODULE=${RSYNC_HOST}/Fedora-EPEL
 RSYNC_CENTOS_MODULE=${RSYNC_HOST}/CentOS
 RSYNC_PUPPETLABS_MODULE=yum.puppetlabs.com/packages
+RSYNC_LINUXMINT_MODULE=mirror.csclub.uwaterloo.ca/linuxmint-packages
 
 # uncomment the following only if using authenticated rsync
 #RSYNC_USER=user
