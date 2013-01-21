@@ -41,8 +41,6 @@
 /3*/**
 #Puppetlabs excludes
 /apt-enterprise/**
-#apt repo needs --copy-links option and is handled seperately
-/apt/**
 /yum-enterprise/**
 /incoming/**
 /tasks/**
