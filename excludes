@@ -32,10 +32,9 @@
 /updates/testing/**
 #EPEL excludes
 /4*/**
-/5Client/**
-/5Server/**
 /beta/**
 /testing/**
+**/*.hdr
 #CentOS excludes
 /2*/**
 /3*/**
@@ -46,3 +45,18 @@
 /tasks/**
 #ignore source tarballs in linux mint
 **/*.tar.gz
+#OpenSuSE contains some unnecessary dosutils
+**/dosutils/**
+**/*.rtf
+**/*.exe
+**/*.torrent
+**/*.pdf
+**/*.drpm
+**/*.src.rpm
+/11.0/**
+/11.1/**
+/11.2/**
+/11.3/**
+/11.*-test/**
+/12.*-test/**
+/NonFree/**

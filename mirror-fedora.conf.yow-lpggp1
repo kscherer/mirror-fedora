@@ -3,13 +3,25 @@ EPEL_MIRROR_ROOT=/yow-lpggp14/mirror/epel
 CENTOS_MIRROR_ROOT=/yow-lpggp14/mirror/centos
 PUPPETLABS_MIRROR_ROOT=/yow-lpggp14/mirror/puppetlabs
 LINUXMINT_MIRROR_ROOT=/yow-lpggp14/mirror/linuxmint-packages
+OPENSUSEDIST_MIRROR_ROOT=/yow-lpggp14/mirror/opensuse/distribution/
+OPENSUSEUPDATE_MIRROR_ROOT=/yow-lpggp14/mirror/opensuse/update/
+OPENSUSEPUPPET_MIRROR_ROOT=/yow-lpggp14/mirror/opensuse/puppet/
 
 RSYNC_HOST=mirror.nexicom.net
 RSYNC_FEDORA_MODULE=${RSYNC_HOST}/Fedora
 RSYNC_EPEL_MODULE=${RSYNC_HOST}/Fedora-EPEL
 RSYNC_CENTOS_MODULE=${RSYNC_HOST}/CentOS
+
+#RSYNC_HOST=mirrors.kernel.org
+#RSYNC_FEDORA_MODULE=${RSYNC_HOST}/fedora
+#RSYNC_EPEL_MODULE=${RSYNC_HOST}/fedora-epel
+#RSYNC_CENTOS_MODULE=${RSYNC_HOST}/centos
+
 RSYNC_PUPPETLABS_MODULE=yum.puppetlabs.com/packages
 RSYNC_LINUXMINT_MODULE=mirror.csclub.uwaterloo.ca/linuxmint-packages
+RSYNC_OPENSUSEDIST_MODULE=mirror.csclub.uwaterloo.ca/opensuse/distribution/
+RSYNC_OPENSUSEUPDATE_MODULE=mirror.csclub.uwaterloo.ca/opensuse/update/
+RSYNC_OPENSUSEPUPPET_MODULE=rsync.opensuse.org:/buildservice-repos/systemsmanagement:/puppet/
 
 # uncomment the following only if using authenticated rsync
 #RSYNC_USER=user
