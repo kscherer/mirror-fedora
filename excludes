@@ -8,6 +8,7 @@
 **/ppc64/**
 **/armhfp/**
 **/s390/**
+**/ia64/**
 **/s390x/**
 **/*.iso
 /core/**
@@ -43,8 +44,10 @@
 /yum-enterprise/**
 /incoming/**
 /tasks/**
+**/*.orig.tar.gz
+**/*.debian.tar.gz
 #ignore source tarballs in linux mint
-**/*.tar.gz
+/pool/**/*.tar.gz
 #OpenSuSE contains some unnecessary dosutils
 **/dosutils/**
 **/*.rtf
