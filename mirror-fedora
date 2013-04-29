@@ -132,7 +132,7 @@ if [ $? -ne 0 ]; then
 fi
 
 #When used from cron, this should send email that there was rsync failure
-if [ -z "$RSYNC_FAILURE" ]; then
+if [ -n "$RSYNC_FAILURE" ]; then
     >&2 echo "Failure rsync of $RSYNC_FAILURE"
 fi
 
