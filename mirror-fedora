@@ -75,11 +75,12 @@ fi
 #Keep track of rsync return code
 RSYNC_SUCCESS=""
 RSYNC_FAILURE=""
+RSYNC_INTERRUPT=0
 
 function do_rsync() {
     local RSYNC_MODULE=$1
     local MIRROR_ROOT=$2
-    if [ -n "$RSYNC_MODULE" ] && [ -n "$MIRROR_ROOT" ]; then
+    if [ $RSYNC_INTERRUPT -eq 0 ] && [ -n "$RSYNC_MODULE" ] && [ -n "$MIRROR_ROOT" ]; then
 
         $LOGGER "begin ${RSYNC_MODULE} sync"
         # the order of the excludes is significant
@@ -99,12 +100,17 @@ function do_rsync() {
             $password_arg \
             $MIRROR_ROOT
 
+	RET=$?
+
         # acceptable rsync exit codes:
         #       0      Success
         #       23     Partial transfer due to error
         #       24     Partial transfer due to vanished source files
-        if [ $? -eq 0 -o $? -eq 23 -o $? -eq 24 ]; then
+        if [ $RET -eq 0 -o $RET -eq 23 -o $RET -eq 24 ]; then
             RSYNC_SUCCESS="$RSYNC_MODULE $RSYNC_SUCCESS"
+        elif [ $RET -eq 20 ]; then
+            RSYNC_INTERRUPT=1
+            RSYNC_FAILURE="$RSYNC_MODULE $RSYNC_FAILURE"
         else
             RSYNC_FAILURE="$RSYNC_MODULE $RSYNC_FAILURE"
         fi
@@ -124,11 +130,13 @@ do_rsync ${RSYNC_OPENSUSEPUPPET_MODULE} ${OPENSUSEPUPPET_MIRROR_ROOT}
 
 touch --date "@$(($start_time - 30))" $LAST_RUN
 
-# update mirror status in the MirrorManager database
-$LOGGER "reporting to mirrormanager"
-$(dirname $0)/report_mirror_proxy.py
-if [ $? -ne 0 ]; then
-	$LOGGER "ERROR failed to report to mirrormanager"
+if [ $RSYNC_INTERRUPT -eq 0 ]; then
+    # update mirror status in the MirrorManager database
+    $LOGGER "reporting to mirrormanager"
+    $(dirname $0)/report_mirror_proxy.py
+    if [ $? -ne 0 ]; then
+        $LOGGER "ERROR failed to report to mirrormanager"
+    fi
 fi
 
 #When used from cron, this should send email that there was rsync failure
