@@ -10,7 +10,6 @@
 **/s390/**
 **/ia64/**
 **/s390x/**
-**/*.iso
 /core/**
 /development/**
 /extras/**
