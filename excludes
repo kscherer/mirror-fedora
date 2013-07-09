@@ -33,6 +33,7 @@
 #EPEL excludes
 /4*/**
 /beta/**
+/testing/4*/**
 **/*.hdr
 #CentOS excludes
 /2*/**
