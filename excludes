@@ -43,6 +43,7 @@
 /yum-enterprise/**
 /incoming/**
 /tasks/**
+/yum/fedora/f16*
 **/*.orig.tar.gz
 **/*.debian.tar.gz
 #ignore source tarballs in linux mint
