@@ -30,6 +30,7 @@
 /updates/13/**
 /updates/14/**
 /updates/testing/**
+**/.~tmp~/**
 #EPEL excludes
 /4*/**
 /beta/**
@@ -63,3 +64,5 @@
 /11.*-test/**
 /12.*-test/**
 /NonFree/**
+**/openSUSE-Factory*.iso
+/1*-Milestone*/**
