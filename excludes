@@ -66,3 +66,5 @@
 /NonFree/**
 **/openSUSE-Factory*.iso
 /1*-Milestone*/**
+#exclude all files that start with a dot
+**/.*
