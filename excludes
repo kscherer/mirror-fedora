@@ -63,6 +63,9 @@
 /11.3/**
 /11.*-test/**
 /12.*-test/**
+/13.*-test/**
+/14.*-test/**
+/15.*-test/**
 /NonFree/**
 **/openSUSE-Factory*.iso
 /1*-Milestone*/**
