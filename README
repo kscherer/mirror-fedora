@@ -1,4 +1,7 @@
-A script to update a Fedora mirror. 
+A script to update a Fedora mirror.
+
+Heavily modified by Konrad Scherer to handle multiple rsync repos
+on multiple internal mirrors.
 
 = NOTE! =
 
@@ -6,7 +9,7 @@ This script has not been tested since numerous changes were made!
 
 = Getting Started =
 
-* Make sure you have enough space. 
+* Make sure you have enough space.
 How much space do you need?
 
 See http://download.fedora.redhat.com/pub/DIRECTORY_SIZES.txt
@@ -19,9 +22,9 @@ See https://admin.fedoraproject.org/accounts/
 
 See http://fedoraproject.org/wiki/Infrastructure/Mirroring
 
-* Find an upstream mirror to rsync from. 
+* Find an upstream mirror to rsync from.
 
-If you are running a public mirror you should ask a tier 1 mirror for 
+If you are running a public mirror you should ask a tier 1 mirror for
 private rsync access.
 
 Once you have a upstream rsync host and credentials, adjust the variables in the
@@ -46,23 +49,31 @@ See http://fedoraproject.org/wiki/Infrastructure/MirrorManager
 
 == Files ==
 
-* README			
+* README
 : this file
 
-* mirror-fedora		
+* mirror-fedora
 : script to rsync and run report_mirror
 
-* mirror-fedora.cron	
+* mirror-fedora.cron
 : configuration to run script every so often
 
-* mirror-fedora-tmpfiles.conf 
+* mirror-fedora-tmpfiles.conf
 : satisfies http://fedoraproject.org/wiki/Features/var-run-tmpfs
 
-* excludes	        
+* excludes
 : directories to exclude from mirroring (srpms or exotic architectures for example)
 
-* password	
+* password
 : file containing rsync password for upstream mirror
+
+* mirror-fedora.conf.<hostname>
+: file containing rsync configuration for specific hosts. This allows
+multiple internal mirrors to mirror different repos from closest
+server
+
+* report_mirror_proxy.py
+: Hacked mirror proxy script to handle internal https proxy
 
 == Notifying  MirrorManager ==
 
@@ -81,7 +92,7 @@ the last successful run.
 
 See  https://www.redhat.com/mailman/private/mirror-list-d/2009-April/msg00007.html
 
-Unfortunately the above is only useful for tier 1 mirrors. Because it presents 
+Unfortunately the above is only useful for tier 1 mirrors. Because it presents
 the list of recent changes on the tier 0 mirrors. You are probably
 a tier 2, so this feature could lead to your mirror becoming inconsistent with
 tier 0.
