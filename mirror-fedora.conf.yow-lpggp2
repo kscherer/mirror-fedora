@@ -16,7 +16,8 @@ RSYNC_PUPPETLABS_MODULE=yum.puppetlabs.com/packages
 RSYNC_LINUXMINT_MODULE=mirror.csclub.uwaterloo.ca/linuxmint-packages
 RSYNC_OPENSUSEDIST_MODULE=mirror.csclub.uwaterloo.ca/opensuse/distribution/
 RSYNC_OPENSUSEUPDATE_MODULE=mirror.csclub.uwaterloo.ca/opensuse/update/
-RSYNC_OPENSUSEPUPPET_MODULE=rsync.opensuse.org:/buildservice-repos/systemsmanagement:/puppet/
+#RSYNC_OPENSUSEPUPPET_MODULE=rsync.opensuse.org:/buildservice-repos-main/systemsmanagement:/puppet/
+RSYNC_OPENSUSEPUPPET_MODULE=ftp5.gwdg.de:/pub/opensuse/repositories/systemsmanagement:/puppet/
 
 # uncomment the following only if using authenticated rsync
 #RSYNC_USER=user
