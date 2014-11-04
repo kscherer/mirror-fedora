@@ -47,6 +47,10 @@
 /yum/fedora/f16*
 **/*.orig.tar.gz
 **/*.debian.tar.gz
+**/*.orig.tar.bz2
+**/*.debian.tar.bz2
+**/*.orig.tar.xz
+**/*.debian.tar.xz
 #ignore source tarballs in linux mint
 /pool/**/*.tar.gz
 #OpenSuSE contains some unnecessary dosutils
@@ -69,5 +73,3 @@
 /NonFree/**
 **/openSUSE-Factory*.iso
 /1*-Milestone*/**
-#exclude all files that start with a dot
-**/.*
