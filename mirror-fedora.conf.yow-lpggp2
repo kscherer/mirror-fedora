@@ -1,11 +1,11 @@
-FEDORA_MIRROR_ROOT=/mnt/yow-mirror/mirror/fedora
-EPEL_MIRROR_ROOT=/mnt/yow-mirror/mirror/epel
-CENTOS_MIRROR_ROOT=/mnt/yow-mirror/mirror/centos
-PUPPETLABS_MIRROR_ROOT=/mnt/yow-mirror/mirror/puppetlabs
-LINUXMINT_MIRROR_ROOT=/mnt/yow-mirror/mirror/linuxmint-packages
-OPENSUSEDIST_MIRROR_ROOT=/mnt/yow-mirror/mirror/opensuse/distribution/
-OPENSUSEUPDATE_MIRROR_ROOT=/mnt/yow-mirror/mirror/opensuse/update/
-OPENSUSEPUPPET_MIRROR_ROOT=/mnt/yow-mirror/mirror/opensuse/puppet/
+FEDORA_MIRROR_ROOT=/yow-lpggp21/mirror/fedora
+EPEL_MIRROR_ROOT=/yow-lpggp21/mirror/epel
+CENTOS_MIRROR_ROOT=/yow-lpggp21/mirror/centos
+PUPPETLABS_MIRROR_ROOT=/yow-lpggp21/mirror/puppetlabs
+LINUXMINT_MIRROR_ROOT=/yow-lpggp21/mirror/linuxmint-packages
+OPENSUSEDIST_MIRROR_ROOT=/yow-lpggp21/mirror/opensuse/distribution/
+OPENSUSEUPDATE_MIRROR_ROOT=/yow-lpggp21/mirror/opensuse/update/
+OPENSUSEPUPPET_MIRROR_ROOT=/yow-lpggp21/mirror/opensuse/puppet/
 
 RSYNC_FEDORA_MODULE=fedora.mirror.nexicom.net/Fedora
 RSYNC_EPEL_MODULE=fedora.mirror.nexicom.net/Fedora-EPEL

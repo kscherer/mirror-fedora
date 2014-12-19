@@ -13,22 +13,8 @@
 /core/**
 /development/**
 /extras/**
-/releases/7/**
-/releases/8/**
-/releases/9/**
-/releases/10/**
-/releases/11/**
-/releases/12/**
-/releases/13/**
-/releases/14/**
-/releases/test/*Alpha/**
-/updates/8/**
-/updates/9/**
-/updates/10/**
-/updates/11/**
-/updates/12/**
-/updates/13/**
-/updates/14/**
+/atomic/**
+/releases/test/**
 /updates/testing/**
 **/.~tmp~/**
 #EPEL excludes
