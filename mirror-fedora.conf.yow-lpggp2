@@ -7,9 +7,12 @@ OPENSUSEDIST_MIRROR_ROOT=/yow-lpggp21/mirror/opensuse/distribution/
 OPENSUSEUPDATE_MIRROR_ROOT=/yow-lpggp21/mirror/opensuse/update/
 OPENSUSEPUPPET_MIRROR_ROOT=/yow-lpggp21/mirror/opensuse/puppet/
 
-RSYNC_FEDORA_MODULE=fedora.mirror.nexicom.net/Fedora
-RSYNC_EPEL_MODULE=fedora.mirror.nexicom.net/Fedora-EPEL
-RSYNC_CENTOS_MODULE=centos.mirror.nexicom.net/CentOS/
+#RSYNC_FEDORA_MODULE=fedora.mirror.nexicom.net/Fedora
+#RSYNC_EPEL_MODULE=fedora.mirror.nexicom.net/Fedora-EPEL
+#RSYNC_CENTOS_MODULE=centos.mirror.nexicom.net/CentOS/
+RSYNC_FEDORA_MODULE=fedora.bhs.mirrors.ovh.net/download.fedora.redhat.com
+RSYNC_EPEL_MODULE=mirror.cogentco.com/fedora-epel
+RSYNC_CENTOS_MODULE=centos.bhs.mirrors.ovh.net/ftp.centos.org
 
 RSYNC_PUPPETLABS_MODULE=yum.puppetlabs.com/packages
 RSYNC_LINUXMINT_MODULE=mirror.csclub.uwaterloo.ca/linuxmint-packages
