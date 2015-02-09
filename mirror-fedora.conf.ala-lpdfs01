@@ -1,0 +1,22 @@
+FEDORA_MIRROR_ROOT=/pool/mirror/fedora
+EPEL_MIRROR_ROOT=/pool/mirror/epel
+CENTOS_MIRROR_ROOT=/pool/mirror/centos
+PUPPETLABS_MIRROR_ROOT=/pool/mirror/puppetlabs
+
+RSYNC_HOST=ala-lpggp4.wrs.com
+#RSYNC_FEDORA_MODULE=${RSYNC_HOST}/fedora
+RSYNC_EPEL_MODULE=${RSYNC_HOST}/epel
+RSYNC_CENTOS_MODULE=${RSYNC_HOST}/centos
+RSYNC_PUPPETLABS_MODULE=${RSYNC_HOST}/puppetlabs
+
+# uncomment the following only if using authenticated rsync
+#RSYNC_USER=user
+# place password in this file if using authenticated rsync
+#RSYNC_PASS=$(dirname $0)/password
+#RSYNC_EXCLUDES=$(dirname $0)/excludes
+#RSYNC_PARTIAL_DIR=.rsync-partial-dir
+# Uncomment for a more interesting manual run (not cron)
+#RSYNC_BONUS_ARGS="-h --stats --progress"
+
+#LOCK_FILE=$(dirname $0)/running
+#LAST_RUN=$(dirname $0)/last-run
