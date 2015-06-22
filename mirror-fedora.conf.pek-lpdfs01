@@ -1,7 +1,7 @@
-FEDORA_MIRROR_ROOT=/pek-mirror1/mirror/fedora
-EPEL_MIRROR_ROOT=/pek-mirror1/mirror/epel
-CENTOS_MIRROR_ROOT=/pek-mirror1/mirror/centos
-PUPPETLABS_MIRROR_ROOT=/pek-mirror1/mirror/puppetlabs
+FEDORA_MIRROR_ROOT=/pool/mirror/fedora
+EPEL_MIRROR_ROOT=/pool/mirror/epel
+CENTOS_MIRROR_ROOT=/pool/mirror/centos
+PUPPETLABS_MIRROR_ROOT=/pool/mirror/puppetlabs
 
 RSYNC_HOST=ala-lpdfs01.wrs.com
 #RSYNC_FEDORA_MODULE=${RSYNC_HOST}/fedora
