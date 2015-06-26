@@ -94,6 +94,7 @@ function do_rsync() {
             --delete \
             --delete-delay \
             --delay-updates \
+            --chmod=D755,F644 \
             --exclude=${RSYNC_PARTIAL_DIR} \
             --exclude-from=${RSYNC_EXCLUDES} \
             rsync://${user_arg}${RSYNC_MODULE}/ \

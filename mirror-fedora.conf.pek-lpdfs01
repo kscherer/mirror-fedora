@@ -3,11 +3,12 @@ EPEL_MIRROR_ROOT=/pool/mirror/epel
 CENTOS_MIRROR_ROOT=/pool/mirror/centos
 PUPPETLABS_MIRROR_ROOT=/pool/mirror/puppetlabs
 
-RSYNC_HOST=ala-lpdfs01.wrs.com
+#RSYNC_HOST=ala-lpdfs01.wrs.com
+RSYNC_HOST=mirrors.yun-idc.com
 #RSYNC_FEDORA_MODULE=${RSYNC_HOST}/fedora
 RSYNC_EPEL_MODULE=${RSYNC_HOST}/epel
 RSYNC_CENTOS_MODULE=${RSYNC_HOST}/centos
-RSYNC_PUPPETLABS_MODULE=${RSYNC_HOST}/puppetlabs
+RSYNC_PUPPETLABS_MODULE=ala-lpdfs01.wrs.com/puppetlabs
 
 # uncomment the following only if using authenticated rsync
 #RSYNC_USER=user
