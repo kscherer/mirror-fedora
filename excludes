@@ -59,3 +59,4 @@
 /NonFree/**
 **/openSUSE-Factory*.iso
 /1*-Milestone*/**
+/apt/work.*
