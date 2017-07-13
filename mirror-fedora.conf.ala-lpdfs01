@@ -7,7 +7,7 @@ RSYNC_HOST=linux.mirrors.es.net
 #RSYNC_FEDORA_MODULE=${RSYNC_HOST}/fedora
 RSYNC_EPEL_MODULE=${RSYNC_HOST}/fedora-epel
 RSYNC_CENTOS_MODULE=${RSYNC_HOST}/centos
-RSYNC_PUPPETLABS_MODULE=yum.puppetlabs.com/packages
+RSYNC_PUPPETLABS_MODULE=rsync.puppet.com/packages
 
 # uncomment the following only if using authenticated rsync
 #RSYNC_USER=user

@@ -14,7 +14,7 @@ RSYNC_FEDORA_MODULE=mirror.cogentco.com/fedora-enchilada/linux
 RSYNC_EPEL_MODULE=mirror.cogentco.com/fedora-epel
 RSYNC_CENTOS_MODULE=centos.bhs.mirrors.ovh.net/ftp.centos.org
 
-RSYNC_PUPPETLABS_MODULE=yum.puppetlabs.com/packages
+RSYNC_PUPPETLABS_MODULE=rsync.puppet.com/packages
 RSYNC_LINUXMINT_MODULE=mirror.csclub.uwaterloo.ca/linuxmint-packages
 RSYNC_OPENSUSEDIST_MODULE=mirror.csclub.uwaterloo.ca/opensuse/distribution/
 RSYNC_OPENSUSEUPDATE_MODULE=mirror.csclub.uwaterloo.ca/opensuse/update/
