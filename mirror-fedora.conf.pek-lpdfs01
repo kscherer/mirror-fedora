@@ -5,7 +5,8 @@ PUPPETLABS_MIRROR_ROOT=/pool/mirror/puppetlabs
 
 #RSYNC_HOST=ala-lpdfs01.wrs.com
 #RSYNC_HOST=mirrors.yun-idc.com
-RSYNC_HOST=mirrors.tuna.tsinghua.edu.cn
+#RSYNC_HOST=mirrors.tuna.tsinghua.edu.cn
+RSYNC_HOST=mirrors.ustc.edu.cn/repo
 #RSYNC_FEDORA_MODULE=${RSYNC_HOST}/fedora
 RSYNC_EPEL_MODULE=${RSYNC_HOST}/epel
 RSYNC_CENTOS_MODULE=${RSYNC_HOST}/centos
