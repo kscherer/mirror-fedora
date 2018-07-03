@@ -131,15 +131,6 @@ do_rsync ${RSYNC_OPENSUSEPUPPET_MODULE} ${OPENSUSEPUPPET_MIRROR_ROOT}
 
 touch --date "@$(($start_time - 30))" $LAST_RUN
 
-if [ $RSYNC_INTERRUPT -eq 0 ]; then
-    # update mirror status in the MirrorManager database
-    $LOGGER "reporting to mirrormanager"
-    $(dirname $0)/report_mirror_proxy.py
-    if [ $? -ne 0 ]; then
-        $LOGGER "ERROR failed to report to mirrormanager"
-    fi
-fi
-
 #When used from cron, this should send email that there was rsync failure
 if [ -n "$RSYNC_FAILURE" ]; then
     >&2 echo "Failure rsync of $RSYNC_FAILURE"
